@@ -39,3 +39,9 @@ luac.out
 *.x86_64
 *.hex
 
+# Lazy package lock files
+lazy-lock.json
+
+# Spellcheck 
+spell/*
+
