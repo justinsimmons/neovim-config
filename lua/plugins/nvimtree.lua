@@ -12,7 +12,22 @@ return {
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
 
-        require("nvim-tree").setup({})
+        require("nvim-tree").setup({
+            renderer = {
+                indent_markers = {
+                    enable = true,
+                },
+            },
+            filters = {
+                custom = {
+                    ".DS_Store",
+                    "^.git$",
+                },
+            },
+            git = {
+                ignore = false, -- This will show .env file in tree.
+            },
+        })
 
         vim.keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>",
             { desc = "Toggle file [e]xplorer" })                   -- toggle file explorer

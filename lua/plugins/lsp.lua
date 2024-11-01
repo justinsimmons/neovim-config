@@ -23,7 +23,7 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             require('cmp_nvim_lsp').default_capabilities()
         )
-        
+
         local lspconfig = require("lspconfig")
 
         -- Use mason to fetch LSPs that are independent of any installed on the system.
@@ -71,15 +71,15 @@ return {
                                 },
                                 staticcheck = true,
                                 gofumpt = false,
-                                hints = {
-                                    assignVariableTypes = true,
-                                    compositeLiteralFields = true,
-                                    compositeLiteralTypes = true,
-                                    constantValues = true,
-                                    functionTypeParameters = true,
-                                    parameterNames = true,
-                                    rangeVariableTypes = true,
-                                },
+                                --hints = {
+                                --    assignVariableTypes = true,
+                                --    compositeLiteralFields = true,
+                                --    compositeLiteralTypes = true,
+                                --    constantValues = true,
+                                --    functionTypeParameters = true,
+                                --    parameterNames = true,
+                                --    rangeVariableTypes = true,
+                                --},
                             },
                         },
                     })
