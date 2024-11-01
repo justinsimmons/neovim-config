@@ -26,7 +26,7 @@ return {
         
         local lspconfig = require("lspconfig")
 
-        -- Use mason to fetch LSPs that are indepenent of any installed on the system.
+        -- Use mason to fetch LSPs that are independent of any installed on the system.
         require("mason").setup({})
         -- Configure the automatic setup of every language server installed.
         require("mason-lspconfig").setup({
