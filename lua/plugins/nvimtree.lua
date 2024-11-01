@@ -22,6 +22,7 @@ return {
                 custom = {
                     ".DS_Store",
                     "^.git$",
+                    "^.vscode$",
                 },
             },
             git = {
