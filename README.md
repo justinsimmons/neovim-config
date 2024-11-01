@@ -1,6 +1,12 @@
 # neovim-config
 
-Neovim as an IDE configuration.
+My personal [Neovim](https://neovim.io/) configuration to replicate the experience you would get from a standard IDE like [VS Code](https://code.visualstudio.com/). 
+With the benefit of using vim motions to (hopefully) increase my efficiency. As well as 100% customization.
+
+Heavy inspiration was taken from:
+- [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
+- [Josean Martinez](https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim)
+- [Kickstart Nvim](https://github.com/nvim-lua/kickstart.nvim)
 
 ## Setup
 
@@ -65,16 +71,16 @@ xcode-select --install
 
 1. Clone the repository onto your local machine.
 
-```sh
-git clone -depth=1 git@github.com:justinsimmons/neovim-config.git ~/.config/nvim
-```
+    ```sh
+    git clone -depth=1 git@github.com:justinsimmons/neovim-config.git ~/.config/nvim
+    ```
 
 1. Remove git artifacts:
-```sh
-rm -rf ~/.config/nvim/.git
-rm ~/.config/nvim/.gitignore
-rm ~/.config/nvim/README.md
-```
+    ```sh
+    rm -rf ~/.config/nvim/.git
+    rm ~/.config/nvim/.gitignore
+    rm ~/.config/nvim/README.md
+    ```
 
 ### Post Installation
 
@@ -84,10 +90,7 @@ Start Neovim:
 nvim
 ```
 
-That's it! Lazy will install all the plugins you have. Use `:Lazy` to view
-current plugin status. Hit `q` to close the window.
+That's it! Lazy will install all the plugins you have. Use `:Lazy` to view current plugin status. Hit `q` to close the window.
 
-Read through the `init.lua` file in your configuration folder for more
-information about extending and exploring Neovim. That also includes
-examples of adding popularly requested plugins.
+Read through the `init.lua` file in your configuration folder for more information about extending and exploring Neovim. That also includes examples of adding popularly requested plugins.
 
