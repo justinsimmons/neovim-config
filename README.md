@@ -72,7 +72,7 @@ xcode-select --install
 1. Clone the repository onto your local machine.
 
     ```sh
-    git clone -depth=1 git@github.com:justinsimmons/neovim-config.git ~/.config/nvim
+    git clone  git@github.com:justinsimmons/neovim-config.git ~/.config/nvim
     ```
 
 1. Remove git artifacts:

@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 -- File Tree style.
 vim.g.netrw_liststyle = 3 -- Shows '|' in tree style.
 
@@ -10,7 +12,8 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.expandtab = true  -- Expand tab to spaces
+vim.opt.autoindent = true -- Copy indent from current line when starting new one
 
 vim.opt.wrap = false
 

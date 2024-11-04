@@ -30,7 +30,10 @@ return {
         require("mason").setup({})
         -- Configure the automatic setup of every language server installed.
         require("mason-lspconfig").setup({
-            ensure_installed = {},
+            ensure_installed = {
+                "lua_ls",
+                "gopls",
+            },
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup({
