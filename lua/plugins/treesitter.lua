@@ -21,6 +21,8 @@ return {
                 "yaml",
                 "markdown",
                 "gitignore",
+                "proto", -- Protobuf
+                "make",  -- GNU Makefiles
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
