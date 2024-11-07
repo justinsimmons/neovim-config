@@ -2,11 +2,11 @@
 
 My personal [Neovim](https://neovim.io/) configuration to replicate the experience you would get from a standard IDE like [VS Code](https://code.visualstudio.com/).
 With the added benefits of:
-    - Uses about half the system resources of other IDEs like VS Code.
-    - Vim motions are more efficient than using a mouse, with sufficient practice.
-    - Vast plugin ecosystem, that address any need that arises.
-    - I am a nerd who likes to tinker.
-    - Less eye fatigue, due to the color scheme. Its ugly but it works!!!
+- Uses about half the system resources of other IDEs like VS Code.
+- Vim motions are more efficient than using a mouse, with sufficient practice.
+- Vast plugin ecosystem, that address any need that arises.
+- I am a nerd who likes to tinker.
+- Less eye fatigue, due to the color scheme. Its ugly but it works!!!
 
 Heavy inspiration was taken from:
 - [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
