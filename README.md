@@ -1,12 +1,19 @@
 # neovim-config
 
-My personal [Neovim](https://neovim.io/) configuration to replicate the experience you would get from a standard IDE like [VS Code](https://code.visualstudio.com/). 
-With the benefit of using vim motions to (hopefully) increase my efficiency. As well as 100% customization.
+My personal [Neovim](https://neovim.io/) configuration to replicate the experience you would get from a standard IDE like [VS Code](https://code.visualstudio.com/).
+With the added benefits of:
+    - Uses about half the system resources of other IDEs like VS Code.
+    - Vim motions are more efficient than using a mouse, with sufficient practice.
+    - Vast plugin ecosystem, that address any need that arises.
+    - I am a nerd who likes to tinker.
+    - Less eye fatigue, due to the color scheme. Its ugly but it works!!!
 
 Heavy inspiration was taken from:
 - [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
 - [Josean Martinez](https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim)
 - [Kickstart Nvim](https://github.com/nvim-lua/kickstart.nvim)
+
+Here is a great video introduction on [using vim as your editor](https://www.youtube.com/watch?v=X6AR2RMB5tE).
 
 ## Setup
 
