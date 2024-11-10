@@ -12,7 +12,7 @@ return {
                 "vim", "vimdoc",
                 "query",
                 "javascript", "html", "jsdoc", "typescript", "css", "tsx",
-                "go", --"godot", "gosum", "gomod", "gowork",
+                "go", "gosum", "gomod", "gowork",
                 "python",
                 "rust",
                 "bash",
