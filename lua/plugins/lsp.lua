@@ -31,8 +31,9 @@ return {
         -- Configure the automatic setup of every language server installed.
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "lua_ls",
-                "gopls",
+                "lua_ls", -- lua language server.
+                "gopls",  -- Golang language server.
+                "ts_ls",  -- Typescript language server.
             },
             handlers = {
                 function(server_name)
@@ -63,7 +64,6 @@ return {
                         capabilities = capabilities,
                         cmd = { "gopls" },
                         filetypes = { "go", "gomod", "gowork", "gotmpl" },
-                        inlay_hints = { enabled = true, },
                         settings = {
                             gopls = {
                                 completeUnimported = true,
@@ -72,15 +72,6 @@ return {
                                 --analyses = {},
                                 staticcheck = true,
                                 gofumpt = false,
-                                --hints = {
-                                --    assignVariableTypes = true,
-                                --    compositeLiteralFields = true,
-                                --    compositeLiteralTypes = true,
-                                --    constantValues = true,
-                                --    functionTypeParameters = true,
-                                --    parameterNames = true,
-                                --    rangeVariableTypes = true,
-                                --},
                             },
                         },
                     })
