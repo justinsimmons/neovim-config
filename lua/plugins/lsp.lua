@@ -5,10 +5,7 @@ return {
         "williamboman/mason.nvim",           -- Will make sure we have access to the language servers.
         "williamboman/mason-lspconfig.nvim", -- Configure the automatic setup of every language server we install.
 
-        "hrsh7th/nvim-cmp",
         "hrsh7th/cmp-nvim-lsp",
-
-        "L3MON4D3/LuaSnip",
     },
 
     config = function()
@@ -79,38 +76,6 @@ return {
             },
         })
 
-        -- Set up autocompletion.
-        local cmp = require("cmp")
-
-        cmp.setup({
-            snippet = {
-                expand = function(args)
-                    require("luasnip").lsp_expand(args.body)
-                end,
-            },
-            sources = cmp.config.sources({
-                { name = "nvim_lsp" },
-                { name = "luasnip" }, -- snippets
-                { name = "buffer" },  -- text within current buffer
-                { name = "path" },    -- file system paths
-            }),
-            mapping = cmp.mapping.preset.insert({
-                -- Navigate between completion items
-                ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
-                ['<C-n>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
-
-                -- `Enter` key to confirm completion
-                ['<CR>'] = cmp.mapping.confirm({ select = false }),
-
-                -- Ctrl+Space to trigger completion menu
-                ['<C-Space>'] = cmp.mapping.complete(),
-
-                -- Scroll up and down in the completion documentation
-                ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-d>'] = cmp.mapping.scroll_docs(4),
-            }),
-        })
-
         -- Automatic action performed on events.
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -131,8 +96,10 @@ return {
                 map('gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', "[G]oto [I]mplementation")
                 map('go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type [D]efinition")
                 map('gr', '<cmd>lua vim.lsp.buf.references()<cr>', "[G]oto [R]eferences")
-                map('gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', "")
-                map('<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', "")
+                map('gh', '<cmd>lua vim.lsp.buf.signature_help()<cr>', "Display function signature [h]elp")
+                map('<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<cr>',
+                    "Display function signature [h]elp", "i")
+                map('<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', "LSP rename all instances")
                 -- Execute a code action, usually your cursor needs to be on top of an error
                 -- or a suggestion from your LSP for this to activate.
                 map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
