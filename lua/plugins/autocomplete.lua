@@ -2,6 +2,10 @@ return {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter" },
     dependencies = {
+        "hrsh7th/cmp-nvim-lsp-signature-help",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
         "L3MON4D3/LuaSnip",
     },
 
@@ -17,9 +21,10 @@ return {
             },
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
-                { name = "luasnip" }, -- snippets
-                { name = "buffer" },  -- text within current buffer
-                { name = "path" },    -- file system paths
+                { name = "luasnip" },                 -- snippets
+                { name = 'nvim_lsp_signature_help' }, -- function signature
+                { name = "buffer" },                  -- text within current buffer
+                { name = "path" },                    -- file system paths
             }),
             mapping = cmp.mapping.preset.insert({
                 -- Navigate between completion items
