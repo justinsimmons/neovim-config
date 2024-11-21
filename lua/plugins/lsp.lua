@@ -30,7 +30,8 @@ return {
             ensure_installed = {
                 "lua_ls", -- lua language server.
                 "gopls",  -- Golang language server.
-                "ts_ls",  -- Typescript language server.
+                --"ts_ls",  -- Typescript language server.
+                "pylsp"   -- Python language derver protocol.
             },
             handlers = {
                 function(server_name)
