@@ -1,13 +1,14 @@
 return {
     "neovim/nvim-lspconfig",
-
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        "williamboman/mason.nvim",           -- Will make sure we have access to the language servers.
+        -- Automatically install LSPs and related tools to stdpath for Neovim
+        -- Mason must be loaded before its dependents so we need to set it up here.
+        -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
+        { "williamboman/mason.nvim", opts = {} },
         "williamboman/mason-lspconfig.nvim", -- Configure the automatic setup of every language server we install.
-
-        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-nvim-lsp",              -- Allows extra capabilities provided by nvim-cmp.
     },
-
     config = function()
         -- LSP servers and clients are able to communicate to each other what features they support.
 
@@ -23,15 +24,13 @@ return {
 
         local lspconfig = require("lspconfig")
 
-        -- Use mason to fetch LSPs that are independent of any installed on the system.
-        require("mason").setup({})
         -- Configure the automatic setup of every language server installed.
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls", -- lua language server.
                 "gopls",  -- Golang language server.
                 --"ts_ls",  -- Typescript language server.
-                "pylsp"   -- Python language derver protocol.
+                --"pylsp"   -- Python language server protocol.
             },
             handlers = {
                 function(server_name)
@@ -67,7 +66,9 @@ return {
                                 completeUnimported = true,
                                 completeFunctionCalls = true,
                                 usePlaceholders = false,
-                                --analyses = {},
+                                analyses = {
+                                    unusedparams = true,
+                                },
                                 staticcheck = true,
                                 gofumpt = false,
                             },
@@ -108,10 +109,17 @@ return {
 
                 local client = vim.lsp.get_client_by_id(args.data.client_id)
 
-                if client.supports_method("textDocument/inlayHint") then
-                    vim.lsp.inlay_hint.enable(true)
+                -- The following code creates a keymap to toggle inlay hints in your
+                -- code, if the language server you are using supports them
+                --
+                -- This may be unwanted, since they displace some of your code
+                if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+                    map('<leader>th', function()
+                        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = args.buf })
+                    end, '[T]oggle Inlay [H]ints')
                 end
 
+                -- Format the file on save.
                 if client.supports_method("textDocument/formatting") then
                     -- Format the current buffer on save.
                     vim.api.nvim_create_autocmd("BufWritePre", {

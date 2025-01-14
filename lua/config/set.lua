@@ -1,12 +1,36 @@
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
-
--- File Tree style.
-vim.g.netrw_liststyle = 3 -- Shows '|' in tree style.
+vim.g.maplocalleader = ' '
 
 -- Make line numbers default.
 vim.opt.nu = true
 -- Add relative line numbers, to help with jumping.
 vim.opt.relativenumber = true
+
+-- Enable mouse mode, can be useful for resizing splits for example!
+vim.opt.mouse = 'a'
+
+-- Don't show the mode, since it's already in the status line
+vim.opt.showmode = false
+
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+    vim.opt.clipboard = 'unnamedplus'
+end)
+
+-- Enable break indent
+vim.opt.breakindent = true
+
+-- Save undo history
+vim.opt.undofile = true
+
+-- File Tree style.
+vim.g.netrw_liststyle = 3 -- Shows '|' in tree style.
 
 -- Configure Tabs
 vim.opt.tabstop = 4
@@ -20,7 +44,6 @@ vim.opt.wrap = false
 -- vim.opt.swapfile = false
 -- vim.opt.backup = false
 -- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- vim.opt.undofile = true
 
 -- Search Settings
 vim.opt.ignorecase = true -- Ignore case when searching.
@@ -48,5 +71,5 @@ vim.opt.spell = true
 vim.opt.splitright = true -- split vertical window to the right
 vim.opt.splitbelow = true -- split horizontal window to the bottom
 
--- Clipboard
-vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+-- Show which line your cursor is on
+vim.opt.cursorline = true
