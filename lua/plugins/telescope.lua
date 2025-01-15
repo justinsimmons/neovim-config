@@ -1,5 +1,3 @@
--- https://github.com/nvim-telescope/telescope.nvim?tab=readme-ov-file#usage
-
 return {
     'nvim-telescope/telescope.nvim',
     event = { "VimEnter" },
@@ -55,7 +53,10 @@ return {
                         ["<C-j>"] = actions.move_selection_next,     -- move to next result
                         ["<C-h>"] = "which_key"
                     }
-                }
+                },
+                file_ignore_patterns = {
+                    "%.git/",
+                },
             },
             pickers = {
                 -- Default configuration for builtin pickers goes here:
@@ -65,6 +66,11 @@ return {
                 -- }
                 -- Now the picker_config_key will be applied every time you call this
                 -- builtin picker
+                find_files = {
+                    -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+                    hidden = true,
+                    no_ignore = true,
+                },
             },
             extensions = {
                 -- Your extension configuration goes here:

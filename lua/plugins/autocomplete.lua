@@ -7,7 +7,6 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
     },
-
     config = function()
         -- Set up autocompletion.
         local cmp = require("cmp")
