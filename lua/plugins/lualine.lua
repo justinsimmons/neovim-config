@@ -1,6 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
-    event = { "VimEnter" },
+    -- event = { "VimEnter" },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
         local lualine = require("lualine")
@@ -9,9 +9,9 @@ return {
         lualine.setup {
             options = {
                 icons_enabled = true,
-                theme = 'auto',
-                component_separators = { left = '', right = '' },
-                section_separators = { left = '', right = '' },
+                theme = 'gruvbox-material',
+                component_separators = { left = '', right = '' },
+                section_separators = { left = '', right = '' },
                 disabled_filetypes = {
                     statusline = {},
                     winbar = {},
