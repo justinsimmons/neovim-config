@@ -15,6 +15,7 @@ return {
                 "go", "gosum", "gomod", "gowork",
                 "python",
                 "rust",
+                "zig",
                 "bash",
                 "dockerfile",
                 "json",
