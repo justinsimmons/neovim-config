@@ -12,6 +12,7 @@ Heavy inspiration was taken from:
 - [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
 - [Josean Martinez](https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim)
 - [Kickstart Nvim](https://github.com/nvim-lua/kickstart.nvim)
+- [TJ Devries](https://github.com/tjdevries/config.nvim/)
 
 Here is a great video introduction on [using vim as your editor](https://www.youtube.com/watch?v=X6AR2RMB5tE).
 
