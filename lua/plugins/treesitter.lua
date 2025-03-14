@@ -2,6 +2,9 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
+    dependencies = {
+        "windwp/nvim-ts-autotag",
+    },
     config = function()
         local treesitter = require("nvim-treesitter.configs")
 
@@ -54,7 +57,14 @@ return {
                 -- Using this option may slow down your editor, and you may see some duplicate highlights.
                 -- Instead of true it can also be a list of languages
                 additional_vim_regex_highlighting = false,
-            }
+            },
+            indent = {
+                enable = true,
+            },
+            -- enable autotagging (w/ nvim-ts-autotag plugin)
+            autotag = {
+                enable = true,
+            },
         })
     end
 }
