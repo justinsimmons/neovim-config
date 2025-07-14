@@ -64,7 +64,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 -- Spellcheck
-vim.opt.spelllang = "en_us"
+vim.opt.spelllang = { "en_us", "es" }
 vim.opt.spell = true
 
 -- Split windows
