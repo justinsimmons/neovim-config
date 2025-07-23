@@ -2,29 +2,41 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
+    lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
     config = function()
         local treesitter = require("nvim-treesitter.configs")
 
         treesitter.setup({
             ensure_installed = {
-                "c",
-                "lua",
-                "vim", "vimdoc",
-                "query",
-                "javascript", "html", "jsdoc", "typescript", "css", "tsx",
-                "go", "gosum", "gomod", "gowork",
-                "python",
-                "rust",
-                "zig",
                 "bash",
+                "c",
+                "diff",
                 "dockerfile",
-                "json",
-                "yaml",
-                "markdown",
                 "gitignore",
-                "proto",   -- Protobuf
-                "make",    -- GNU Makefiles
+                "go", "gosum", "gomod", "gowork",
+                "html",
+                "javascript",
+                "jsdoc",
+                "json",
+                "jsonc",
                 "jsonnet", -- jsonnet
+                "lua",
+                "luadoc",
+                "markdown",
+                "markdown_inline",
+                "make", -- GNU Makefiles
+                "printf",
+                "python",
+                "query",
+                "regex",
+                "rust",
+                "toml",
+                "typescript", "css", "tsx",
+                "vim",
+                "vimdoc",
+                "zig",
+                "yaml",
+                "proto", -- Protobuf
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)

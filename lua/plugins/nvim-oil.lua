@@ -17,7 +17,9 @@ return {
             },
             view_options = {
                 show_hidden = true,
-            }
+            },
+            -- Set to true to watch the filesystem for changes and reload oil
+            watch_for_changes = true,
         })
 
         -- Open parent directory in current window.
