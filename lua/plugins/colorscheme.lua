@@ -11,10 +11,7 @@ return {
     },
     {
         "sainnhe/everforest",
-        --lazy = true,
-        config = function()
-            vim.cmd.colorscheme("everforest")
-        end
+        lazy = true,
     },
     {
         "rebelot/kanagawa.nvim",
